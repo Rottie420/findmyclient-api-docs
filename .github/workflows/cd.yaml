@@ -1,0 +1,72 @@
+name: Build and Deploy to Cloud Run
+
+on:
+  push:
+    branches: [main]
+
+env:
+  REGION: us-central1
+  REPO: findmyclient-docs
+  IMAGE: app
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout repository
+      - uses: actions/checkout@v3
+
+      # 2️⃣ Authenticate to Google Cloud
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      # 3️⃣ Setup gcloud
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+      # 4️⃣ Ensure Artifact Registry exists (FIX)
+      - name: Ensure Artifact Registry exists
+        run: |
+          gcloud artifacts repositories describe $REPO \
+            --location=$REGION || \
+          gcloud artifacts repositories create $REPO \
+            --repository-format=docker \
+            --location=$REGION \
+            --description="findmyclient-docs Docker repo"
+
+      # 5️⃣ Configure Docker auth
+      - name: Configure Docker auth
+        run: gcloud auth configure-docker $REGION-docker.pkg.dev --quiet
+
+      # 6️⃣ Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build \
+            -t $REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$REPO/$IMAGE:latest .
+
+      # 7️⃣ Push Docker image
+      - name: Push Docker image
+        run: |
+          docker push $REGION-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/$REPO/$IMAGE:latest
+
+      # 8️⃣ Deploy to Cloud Run
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@v1
+        with:
+          service: findmyclient-docs
+          image: ${{ env.REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.REPO }}/${{ env.IMAGE }}:latest
+          region: ${{ env.REGION }}
+          timeout: 10m
+
+      # 9️⃣ Make service public (MVP mode)
+      - name: Make Cloud Run service public
+        run: |
+          gcloud run services add-iam-policy-binding findmyclient-docs \
+            --member="allUsers" \
+            --role="roles/run.invoker" \
+            --region=$REGION

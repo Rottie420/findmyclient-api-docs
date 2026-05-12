@@ -1,0 +1,27 @@
+site_name: Documentation
+
+nav:
+  - Introduction: introduction.md
+  - Getting Started: getting-started.md
+  - Usage: usage.md
+  - Limitations: limitations.md
+  - Resources: resources.md
+  - Home: https://findmyclient.org
+
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
