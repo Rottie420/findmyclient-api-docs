@@ -6,14 +6,20 @@ The FindMyClient API has the following limitations to ensure stable and fair usa
 
 ## Rate Limits
 Requests are subject to rate limiting. Excessive usage may result in throttling or temporary request delays. Please ensure your integration respects safe request pacing.
+```json
+{
+  "error": "Too many requests. Please wait before trying again.",
+  "status": "failed"
+}
+```
 
 ---
 
 ## Asynchronous Processing
 All requests are processed asynchronously. After submitting a request, you must poll the result endpoint:
-
+```json
 /result/{job_id}
-
+```
 to retrieve the final output once processing is complete.
 
 ---

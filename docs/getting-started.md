@@ -2,7 +2,7 @@
 
 ## Base URL
 
-```txt
+```json
 https://findmyclient.org/api
 ```
 
@@ -24,7 +24,7 @@ Submit a new search request.
 
 ### GET Request
 
-```txt
+```json
 /api/search?query=singapore+cafe
 ```
 
@@ -54,7 +54,7 @@ Retrieve the current status and results of a search job.
 
 ### Example
 
-```txt
+```json
 /api/result/60a414d4-776b-4480-b6e1-ce541439cd51
 ```
 
@@ -66,8 +66,10 @@ Returned while the job is still running.
 
 ```json
 {
-  "status": "processing",
-  "result": null
+  "created_at": "2026-05-14T09:49:32.857753",
+  "error": null,
+  "result": null,
+  "status": "processing"
 }
 ```
 
@@ -79,14 +81,18 @@ Returned once the search has completed successfully.
 
 ```json
 {
-  "status": "completed",
+  "created_at": "2026-05-14T09:49:32.857753",
+  "error": null,
   "result": {
-    "query": "singapore cafe",
-    "total_websites": 10,
-    "total_emails_found": 3,
     "emails": [
-      "contact@pscafe.com"
-    ]
-  }
+      "contact@pscafe.com",
+      "franck@myawesomecafe.com"
+    ],
+    "failed_websites": 8,
+    "query": "singapore cafe",
+    "total_emails_found": 2,
+    "total_websites": 10
+  },
+  "status": "completed"
 }
 ```

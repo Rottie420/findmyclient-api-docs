@@ -44,8 +44,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -305,7 +305,7 @@
   <span class="md-ellipsis">
     
   
-    Usage
+    Basic Usage
   
 
     
@@ -603,12 +603,18 @@
 <p>The FindMyClient API has the following limitations to ensure stable and fair usage across all users.</p>
 <hr />
 <h2 id="rate-limits">Rate Limits</h2>
-<p>Requests are subject to rate limiting. Excessive usage may result in throttling or temporary request delays. Please ensure your integration respects safe request pacing.</p>
+<p>Requests are subject to rate limiting. Excessive usage may result in throttling or temporary request delays. Please ensure your integration respects safe request pacing.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Too many requests. Please wait before trying again.&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;failed&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</code></pre></div></p>
 <hr />
 <h2 id="asynchronous-processing">Asynchronous Processing</h2>
-<p>All requests are processed asynchronously. After submitting a request, you must poll the result endpoint:</p>
-<p>/result/{job_id}</p>
-<p>to retrieve the final output once processing is complete.</p>
+<p>All requests are processed asynchronously. After submitting a request, you must poll the result endpoint:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="err">/resul</span><span class="kc">t</span><span class="err">/</span><span class="p">{</span><span class="err">job_id</span><span class="p">}</span>
+</code></pre></div>
+to retrieve the final output once processing is complete.</p>
 <hr />
 <h2 id="processing-time">Processing Time</h2>
 <p>Processing time may vary depending on:</p>
@@ -674,7 +680,7 @@ Partial or limited data may be returned</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

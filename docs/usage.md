@@ -4,8 +4,8 @@ This example demonstrates how to interact with the FindMyClient API using a simp
 
 The process works in two steps:
 
-1. Start a search job by sending a POST request to /search, which returns a job_id.
-2. Poll the result endpoint /result/{job_id} until the job is completed and the final data is available.
+1. Start a search job by sending a `POST` request to `/search,` which returns a `job_id`.
+2. Poll the result endpoint `/result/{job_id}` until the job is completed and the final data is available.
 
 This approach ensures efficient handling of long-running searches without blocking the system, making it suitable for automation tools, CLI scripts, and backend integrations.
 
