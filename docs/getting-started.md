@@ -25,7 +25,7 @@ Submit a new search request.
 ### GET Request
 
 ```json
-/api/search?query=singapore+cafe
+/api/search?query=singapore+cafe&token=YOUR-API-TOKEN
 ```
 
 ---
@@ -34,6 +34,7 @@ Submit a new search request.
 
 ```json
 {
+  "credits_remaining": 40,
   "status": "processing",
   "job_id": "60a414d4-776b-4480-b6e1-ce541439cd51"
 }
@@ -66,10 +67,11 @@ Returned while the job is still running.
 
 ```json
 {
-  "created_at": "2026-05-14T09:49:32.857753",
+  "created_at": "2026-05-15T13:51:31.928353",
   "error": null,
   "result": null,
-  "status": "processing"
+  "status": "processing",
+  "user": "user@test.com"
 }
 ```
 
@@ -81,16 +83,23 @@ Returned once the search has completed successfully.
 
 ```json
 {
-  "created_at": "2026-05-14T09:49:32.857753",
+  "credit_cost": 10,
+  "created_at": "2026-05-15T13:51:31.928353",
   "error": null,
   "result": {
     "emails": [
-      "contact@pscafe.com",
-      "franck@myawesomecafe.com"
+      "asxvmprobertest@gmail.com",
+      "cafedemusesg@gmail.com",
+      "events@mercimarcelgroup.com",
+      "hello@mercimarcelgroup.com",
+      "jris@cafedemusesg.com",
+      "press@mercimarcelgroup.com",
+      "smart.journey.prober@gmail.com",
+      "work@mercimarcelgroup.com"
     ],
-    "failed_websites": 8,
+    "failed_websites": 7,
     "query": "singapore cafe",
-    "total_emails_found": 2,
+    "total_emails_found": 8,
     "total_websites": 10
   },
   "status": "completed"
