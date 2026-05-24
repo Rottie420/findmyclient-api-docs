@@ -103,6 +103,7 @@ Invoke-RestMethod -Method POST `
   -Body (@{query="singapore cafe"} | ConvertTo-Json)
 
 ```
+<br>
 
 Getting Results from Job
 

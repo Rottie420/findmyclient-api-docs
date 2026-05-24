@@ -629,10 +629,26 @@
 </code></pre></div>
 <br></p>
 <p>Windows (PowerShell)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Invoke-RestMethod</span> <span class="n">-Method</span> <span class="n">POST</span> <span class="p">`</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Invoke-RestMethod</span> <span class="n">-Method</span> <span class="n">POST</span> <span class="p">`</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="n">-Uri</span> <span class="s2">&quot;https://findmyclient.org/api/search&quot;</span> <span class="p">`</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="n">-Headers</span> <span class="p">@{</span><span class="n">Authorization</span><span class="p">=</span><span class="s2">&quot;Bearer YOUR_API_TOKEN&quot;</span><span class="p">}</span> <span class="p">`</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  <span class="n">-Body</span> <span class="p">(@{</span><span class="n">query</span><span class="p">=</span><span class="s2">&quot;singapore cafe&quot;</span><span class="p">}</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span><span class="p">)</span>
+</code></pre></div>
+<br></p>
+<p>Getting Results from Job</p>
+<p>macOS / Linux (bash)</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;https://findmyclient.org/api/result/YOUR_JOB_ID&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_TOKEN&quot;</span>
+</code></pre></div>
+<br></p>
+<p>Windows (CMD)</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl -X GET &quot;https://findmyclient.org/api/result/YOUR_JOB_ID&quot; -H &quot;Authorization: Bearer YOUR_API_TOKEN&quot;
+</code></pre></div>
+<br></p>
+<p>Windows (PowerShell)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Invoke-RestMethod</span> <span class="n">-Method</span> <span class="n">GET</span> <span class="p">`</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  <span class="n">-Uri</span> <span class="s2">&quot;https://findmyclient.org/api/result/YOUR_JOB_ID&quot;</span> <span class="p">`</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  <span class="n">-Headers</span> <span class="p">@{</span><span class="n">Authorization</span><span class="p">=</span><span class="s2">&quot;Bearer YOUR_API_TOKEN&quot;</span><span class="p">}</span>
 </code></pre></div>
 <p><br><br><br><br><br><br><br><br><br><br></p>
 
