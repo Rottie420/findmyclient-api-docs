@@ -34,9 +34,9 @@ Submit a new search request.
 
 ```json
 {
-  "credits_remaining": 40,
-  "status": "processing",
-  "job_id": "60a414d4-776b-4480-b6e1-ce541439cd51"
+  "credits_remaining": 4520,
+  "job_id": "654e0e93-1a14-44d3-97e1-d7fabaf782fd",
+  "status": "processing"
 }
 ```
 
@@ -56,7 +56,7 @@ Retrieve the current status and results of a search job.
 ### Example
 
 ```json
-/api/result/60a414d4-776b-4480-b6e1-ce541439cd51
+/api/result/654e0e93-1a14-44d3-97e1-d7fabaf782fd
 ```
 
 ---
@@ -67,7 +67,7 @@ Returned while the job is still running.
 
 ```json
 {
-  "created_at": "2026-05-15T13:51:31.928353",
+  "created_at": "Sun, 24 May 2026 00:00:46 GMT",
   "error": null,
   "result": null,
   "status": "processing",
@@ -83,25 +83,46 @@ Returned once the search has completed successfully.
 
 ```json
 {
-  "credit_cost": 10,
-  "created_at": "2026-05-15T13:51:31.928353",
+  "created_at": "Sat, 23 May 2026 23:52:26 GMT",
+  "credit_cost": 60,
   "error": null,
   "result": {
-    "emails": [
-      "asxvmprobertest@gmail.com",
-      "cafedemusesg@gmail.com",
-      "events@mercimarcelgroup.com",
-      "hello@mercimarcelgroup.com",
-      "jris@cafedemusesg.com",
-      "press@mercimarcelgroup.com",
-      "smart.journey.prober@gmail.com",
-      "work@mercimarcelgroup.com"
+    "errors": [
+      {
+        "code": "crawl_failed",
+        "count": 8,
+        "retryable": true
+      }
     ],
-    "failed_websites": 7,
-    "query": "singapore cafe",
-    "total_emails_found": 8,
-    "total_websites": 10
+    "input": {
+      "query": "singapore cafe"
+    },
+    "meta": {
+      "agent": "findmyclient-email-scraper-v1",
+      "execution_time_seconds": 26.57,
+      "timestamp": "Sat, 23 May 2026 23:52:53 GMT"
+    },
+    "output": {
+      "emails": [
+        "asxvmprobertest@gmail.com",
+        "events@mercimarcelgroup.com",
+        "hello@mercimarcelgroup.com",
+        "press@mercimarcelgroup.com",
+        "smart.journey.prober@gmail.com",
+        "work@mercimarcelgroup.com"
+      ],
+      "total_emails_found": 6,
+      "total_failed_websites": 8,
+      "total_websites_scanned": 10
+    },
+    "status": {
+      "partial_failure": true,
+      "success": true
+    }
   },
   "status": "completed"
 }
 ```
+
+
+<br><br><br><br><br><br><br><br><br><br>

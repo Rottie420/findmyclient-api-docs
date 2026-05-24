@@ -13,45 +13,51 @@ Once the job status is marked as completed, the script returns structured busine
 
 ```python
 
-import requests
 import time
 
+import requests
+
 BASE_URL = "https://findmyclient.org/api"
+API_TOKEN = "YOUR-API-TOKEN"
 
 
 def search(query: str):
-    # 1. Start search (POST request)
-    response = requests.post(
-        f"{BASE_URL}/search",
-        json={"query": query},
-        timeout=30
+
+    # Start search
+    response = requests.get(
+        f"{BASE_URL}/search", params={"query": query, "token": API_TOKEN}, timeout=30
     )
 
     response.raise_for_status()
+
     data = response.json()
+    job_id = data["job_id"]
+    print(f"Job started: {job_id}")
 
-    job_id = data.get("job_id")
-    print("Job started:", job_id)
-
-    # 2. Poll result
+    # Poll results
     while True:
-        result_url = f"{BASE_URL}/result/{job_id}"
-        res = requests.get(result_url, timeout=30)
-        res.raise_for_status()
-        result = res.json()
 
-        status = result.get("status")
+        result = requests.get(f"{BASE_URL}/result/{job_id}", timeout=30)
+        result.raise_for_status()
+        payload = result.json()
+        status = payload["status"]
 
         if status == "completed":
-            return result["result"]
+
+            if payload["error"]:
+                raise Exception(payload["error"])
+
+            return payload["result"]
 
         print("Still processing...")
-        time.sleep(2)
+
+        time.sleep(60)
 
 
 if __name__ == "__main__":
+
     output = search("singapore cafe")
-    print("\nFinal Result:")
+    print("\nFinal Result:\n")
     print(output)
 
 
@@ -64,6 +70,8 @@ You can interact with the FindMyClient API directly using `curl` for both starti
 
 Start a Search Job
 
+macOS / Linux (bash)
+
 ```bash
 
 curl -X POST "https://findmyclient.org/api/search" \
@@ -73,5 +81,27 @@ curl -X POST "https://findmyclient.org/api/search" \
     "query": "singapore cafe"
   }'
 
+```
+<br>
+
+Windows (CMD)
+
+```cmd
+
+curl -X POST "https://findmyclient.org/api/search" -H "Authorization: Bearer YOUR_API_TOKEN" -H "Content-Type: application/json" -d "{\"query\":\"singapore cafe\"}"
 
 ```
+<br>
+
+Windows (PowerShell)
+
+```PowerShell
+
+Invoke-RestMethod -Method POST `
+  -Uri "https://findmyclient.org/api/search" `
+  -Headers @{Authorization="Bearer YOUR_API_TOKEN"} `
+  -Body (@{query="singapore cafe"} | ConvertTo-Json)
+
+```
+
+<br><br><br><br><br><br><br><br><br><br>

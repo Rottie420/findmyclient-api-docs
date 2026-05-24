@@ -53,3 +53,35 @@ Input Normalization
 - Collapses multiple spaces into a single space
 - Normalizes query formatting before processing
 ```
+
+### v0.0.2 - 24 May 2026
+```
+Added:
+
+Schema Improvements (Machine Readable Results)
+
+- Improved API response schema for consistent machine-readable output.
+- Standardized response structure across all endpoints.
+- Added explicit typing for key fields (e.g. query, results, metadata).
+- Ensured predictable JSON keys to for agents and integrations.
+- Added structured error objects with consistent error codes and messages.
+
+
+API Usage Enforcement (Anti-Abuse Layer)
+
+- Strengthened API usage controls to reduce spam and automated abuse.
+- Added stricter request validation at gateway level.
+- Improved rate-limit enforcement consistency across distributed requests.
+- Added early request rejection to reduce backend load from invalid traffic.
+
+
+Dashboard Improvements (Minor Fixes)
+
+- Fixed UI inconsistency in dashboard data rendering.
+- Improved alignment and spacing in key metric panels.
+- Corrected minor display bug affecting recent request logs.
+- Enhanced stability of real-time update feed under high request volume.
+```
+
+
+<br><br><br><br><br><br><br><br><br><br>
