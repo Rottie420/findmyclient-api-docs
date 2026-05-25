@@ -75,7 +75,7 @@ macOS / Linux (bash)
 ```bash
 
 curl -X POST "https://findmyclient.org/api/search" \
-  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "token: YOUR_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "singapore cafe"
@@ -88,7 +88,7 @@ Windows (CMD)
 
 ```cmd
 
-curl -X POST "https://findmyclient.org/api/search" -H "Authorization: Bearer YOUR_API_TOKEN" -H "Content-Type: application/json" -d "{\"query\":\"singapore cafe\"}"
+curl -X POST "https://findmyclient.org/api/search" -H "token: YOUR_API_TOKEN" -H "Content-Type: application/json" -d "{\"query\":\"singapore cafe\"}"
 
 ```
 <br>
@@ -99,7 +99,7 @@ Windows (PowerShell)
 
 Invoke-RestMethod -Method POST `
   -Uri "https://findmyclient.org/api/search" `
-  -Headers @{Authorization="Bearer YOUR_API_TOKEN"} `
+  -Headers @{token="YOUR_API_TOKEN"} `
   -Body (@{query="singapore cafe"} | ConvertTo-Json)
 
 ```
@@ -112,7 +112,6 @@ macOS / Linux (bash)
 ```bash
 
 curl -X GET "https://findmyclient.org/api/result/YOUR_JOB_ID" \
-  -H "Authorization: Bearer YOUR_API_TOKEN"
 
 ```
 <br>
@@ -121,7 +120,7 @@ Windows (CMD)
 
 ```cmd
 
-curl -X GET "https://findmyclient.org/api/result/YOUR_JOB_ID" -H "Authorization: Bearer YOUR_API_TOKEN"
+curl -X GET "https://findmyclient.org/api/result/YOUR_JOB_ID"
 
 ```
 <br>
@@ -132,7 +131,6 @@ Windows (PowerShell)
 
 Invoke-RestMethod -Method GET `
   -Uri "https://findmyclient.org/api/result/YOUR_JOB_ID" `
-  -Headers @{Authorization="Bearer YOUR_API_TOKEN"}
 
 ```
 
