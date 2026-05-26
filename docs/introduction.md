@@ -1,4 +1,6 @@
-# Introduction
+# Getting Started
+
+## Introduction
 
 Welcome to the official documentation for FindMyClient API.
 

@@ -1,14 +1,16 @@
 site_name: Documentation
 
 nav:
-  - Introduction: introduction.md
-  - Getting Started: getting-started.md
+  - Getting Started: 
+      - Introduction: introduction.md
+      - Search Endpoint: search-endpoint.md
+      - Result Endpoint: result-endpoint.md
   - Basic Usage: usage.md
   - Limitations: limitations.md
   - Changelog: changelog.md
   - Resources: resources.md
   - Home: https://findmyclient.org
-
+  - Main: main.md
 
 theme:
   name: material
@@ -29,6 +31,8 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate
+    - navigation.tabs
+    - navigation.sections
   font:
     text: Inter
     code: JetBrains Mono
