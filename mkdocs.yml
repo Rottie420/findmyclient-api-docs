@@ -1,16 +1,15 @@
 site_name: Documentation
 
 nav:
+  - Home: index.md
   - Getting Started: 
       - Introduction: introduction.md
       - Search Endpoint: search-endpoint.md
       - Result Endpoint: result-endpoint.md
-  - Basic Usage: usage.md
-  - Limitations: limitations.md
+      - Basic Usage: usage.md
+      - Limitations: limitations.md
   - Changelog: changelog.md
   - Resources: resources.md
-  - Home: https://findmyclient.org
-  - Main: main.md
 
 theme:
   name: material

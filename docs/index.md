@@ -25,6 +25,16 @@ hide:
     padding: 3.5rem 1.5rem 5.5rem;
     text-align: center;
   }
+
+  .custom-hero-wrapper {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0)),
+    url('/assets/images/fd72705f-5914-462a-8ece-85fe0d5ae2b6.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
   
   .custom-hero-wrapper h1 {
     color: #ffffff !important;
@@ -150,3 +160,6 @@ The API powering AI agents, workflow automation, CRM enrichment, and lead genera
 </div>
 
 </div>
+
+
+<br><br><br><br><br><br><br><br><br><br>
