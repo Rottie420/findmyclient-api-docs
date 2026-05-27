@@ -118,6 +118,13 @@ hide:
       padding: 3rem !important; 
     }
   }
+
+  .md-typeset .admonition,
+.md-typeset details {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 8px !important;
+}
 </style>
 
 <!-- Hero Banner Layout Area -->
@@ -139,14 +146,16 @@ The API powering AI agents, workflow automation, CRM enrichment, and lead genera
 <div class="grid-content-container" markdown>
 
 <!-- Hero Banner Layout Area -->
-<div style="text-align:center;" markdown>
+<div style="text-align:center; margin-top:" markdown>
 
 <h2> Designed For Modern Lead Generation </h2>
 
 A B2B tool for finding public contact data, enriching prospects, and streamlining outbound research workflows.
 
 </div>
-<br><br>
+
+<br>
+
 <div class="grid cards" markdown>
 
 -   :material-magnify:{ .lg .middle } __Business Discovery__
@@ -194,7 +203,7 @@ A B2B tool for finding public contact data, enriching prospects, and streamlinin
     ```
 
 
--   :material-chart-line:{ .lg .middle } __Built for Growth__
+-   :material-chart-line:{ .lg .middle } ##__Built for Growth__
 
     ---
 
@@ -212,6 +221,34 @@ A B2B tool for finding public contact data, enriching prospects, and streamlinin
 </div>
 
 </div>
+
+
+
+<div style="text-align:center;" markdown>
+
+<h2> Frequently Asked Questions </h2>
+Common questions about the API and platform
+</div>
+
+<br>
+
+
+??? note "How does the FindMyClient API work?"
+
+    The FindMyClient API uses location-based business search powered by public web data and mapping sources to discover businesses matching your queries. It then crawls publicly available company websites and business pages to extract emails  for sales, outreach, CRM, and AI workflow automation.
+
+??? note "What kind of data can FindMyClient discover?"
+
+    FindMyClient can discover publicly available business emails, websites, and location-based business data from web sources and mapping platforms. The open-source version includes a self-hosted UI that can run locally, while the API version returns structured JSON schemas optimized for AI agents, automation workflows, and developer integrations.
+
+
+??? note "Can I integrate this into AI agents or workflow?"
+
+    Yes. The FindMyClient API is designed for AI agents, workflow automation, CRM enrichment, and internal lead generation systems. It returns structured JSON schemas optimized for LLMs, autonomous agents, APIs, and no-code workflows such as n8n and automation pipelines.
+
+??? note "Does FindMyClient support self-hosting?"
+
+    Yes. FindMyClient supports self-hosting through its web UI, allowing developers and teams to run the platform locally or on private infrastructure for greater control, custom workflows, and internal business data operations
 
 
 <br><br><br><br><br><br><br><br><br><br>
