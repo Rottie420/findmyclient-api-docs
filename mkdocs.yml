@@ -1,4 +1,4 @@
-site_name: Documentation
+site_name: FindMyClient
 
 nav:
   - Home: index.md
@@ -32,9 +32,20 @@ theme:
     - content.code.annotate
     - navigation.tabs
     - navigation.sections
+    - navigation.footer
   font:
     text: Inter
     code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github 
+
+repo_url: https://github.com/Rottie420/findmyclient.git
+repo_name: Rottie420/findmyclient
+
+copyright: Copyright &copy; 2026 FindMyClient.org
+
+plugins:
+  - search
 
 markdown_extensions:
   - admonition

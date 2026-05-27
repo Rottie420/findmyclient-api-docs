@@ -128,8 +128,8 @@ hide:
 The API powering AI agents, workflow automation, CRM enrichment, and lead generation systems.
 
 <div class="hero-btn-container" markdown>
-[Search Now](https://findmyclient.org){ .md-button .md-button--primary }
-[Contact Us](#){ .md-button .md-button--white }
+[Get Started](/introduction/){ .md-button .md-button--primary }
+[&nbsp;&nbsp;Sign In&nbsp;&nbsp;](https://findmyclient.org/login){ .md-button .md-button--white }
 </div>
 
 </div>
@@ -138,40 +138,76 @@ The API powering AI agents, workflow automation, CRM enrichment, and lead genera
 <!-- 2x2 Responsive Grid Content Area -->
 <div class="grid-content-container" markdown>
 
+<!-- Hero Banner Layout Area -->
+<div style="text-align:center;" markdown>
+
+<h2> Designed For Modern Lead Generation </h2>
+
+A B2B tool for finding public contact data, enriching prospects, and streamlining outbound research workflows.
+
+</div>
+<br><br>
 <div class="grid cards" markdown>
 
--   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
+-   :material-magnify:{ .lg .middle } __Business Discovery__
 
     ---
 
-    Install [`mkdocs-material`](#) with [`pip`](#) and get up
-    and running in minutes
+    [`Search`](#) businesses using keyword, location, and industry-based discovery powered by public business data.
 
-    [:octicons-arrow-right-24: Getting started](#)
+    ```JSON
+    {
+      "query": "singapore cafe"
+    }
+    ```
 
--   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
 
-    ---
-
-    Focus on your content and generate a responsive and searchable static site
-
-    [:octicons-arrow-right-24: Reference](#)
-
--   :material-format-font:{ .lg .middle } __Made to measure__
+-   :material-lightning-bolt:{ .lg .middle } __Automation Ready__
 
     ---
 
-    Change the colors, fonts, language, icons, logo and more with a few lines
+    Integrate directly into internal tools, [`AI workflows`](#), CRMs, and outreach automation systems.
 
-    [:octicons-arrow-right-24: Customization](#)
+    ```JSON
+    {
+      "method": "GET",
+      "url": "https://findmyclient.org/api/search",
+      "webhook": "n8n webhook URL"
+    }
+    ```
 
--   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
+    
+-   :material-api:{ .lg .middle } __Developer Friendly__
 
     ---
 
-    Material for MkDocs is licensed under MIT and available on [GitHub]
+    Simple [`REST API`](#), asynchronous processing, webhook support, and self-hosted deployment options.
 
-    [:octicons-arrow-right-24: License](#)
+    ```JSON
+    {
+      "endpoint": "/api/search",
+      "method": "GET",
+      "params": {
+        "query": "singapore cafe"
+      }
+    }
+    ```
+
+
+-   :material-chart-line:{ .lg .middle } __Built for Growth__
+
+    ---
+
+    Designed for startups, agencies, and teams scaling [`lead generation`](#) efforts.
+
+    ```JSON
+    {
+      "use_case": "lead_generation",
+      "scale": "startup_to_enterprise",
+      "goal": "find_and_enrich_business_leads",
+      "query_example": "singapore cafe"
+    }
+    ```
 
 </div>
 
