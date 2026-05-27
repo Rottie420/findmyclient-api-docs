@@ -24,18 +24,22 @@ hide:
     color: var(--md-primary-bg-color);
     padding: 3.5rem 1.5rem 5.5rem;
     text-align: center;
+    margin-top: -38px;
   }
 
   .custom-hero-wrapper {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
   background-image:
     linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0)),
-    url('/assets/images/fd72705f-5914-462a-8ece-85fe0d5ae2b6.jpg');
+    url('assets/images/fd72705f-5914-462a-8ece-85fe0d5ae2b6.jpg');
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-  
+
   .custom-hero-wrapper h1 {
     color: #ffffff !important;
     font-size: 2.2rem !important;
@@ -69,7 +73,19 @@ hide:
     transition: color 125ms, background-color 125ms, border-color 125ms !important;
   }
 
+/* Custom White Button */
+.md-button--white {
+  background-color: transparent !important;
+  color: #ffffff !important;          /* Black text for contrast */
+  border-color: #ffffff !important;
+}
 
+/* Hover effect */
+.md-button--white:hover {
+  background-color: #ffffff71 !important;
+  color: #ffffff !important;          /* Black text for contrast */
+  border-color: #ffffff !important;;
+}
   /* 4. Grid Grid Container Rules (Scoped to protect hero banner) */
   .grid-content-container {
     padding: 1.5rem; /* Moves padding out of global and into the grid section */
@@ -113,7 +129,7 @@ The API powering AI agents, workflow automation, CRM enrichment, and lead genera
 
 <div class="hero-btn-container" markdown>
 [Search Now](https://findmyclient.org){ .md-button .md-button--primary }
-[Contact Us](#){ .md-button }
+[Contact Us](#){ .md-button .md-button--white }
 </div>
 
 </div>
