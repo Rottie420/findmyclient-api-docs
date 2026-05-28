@@ -3,11 +3,14 @@
 This example demonstrates how to interact with the FindMyClient API using Python.
 
 It covers the full asynchronous workflow:
+
 - Create a search job
 - Poll for completion
 - Retrieve final results
 
-This approach is ideal for automation scripts, backend systems, and AI agent integrations.
+!!! info "Info"
+
+    This approach is ideal for automation scripts, backend systems, and AI agent integrations.
 
 <br>
 
@@ -65,69 +68,90 @@ if __name__ == "__main__":
 
 <br>
 
-### :material-console: cURL
----
-
-You can also interact with the API directly using `curl`.
-
-<br>
-
 ### :material-play: Start a Search Job
 ---
 
-#### macOS / Linux (bash)
+Start a new search job by sending a query to the API. The request is processed 
+asynchronously and returns a `job_id` that can be used to retrieve results later.
 
-```bash
-curl -X POST "https://findmyclient.org/api/search" \
-  -H "token: YOUR_API_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "query": "singapore cafe"
-  }'
-```
-<br>
 
-#### Windows (CMD)
 
-```cmd
-curl -X POST "https://findmyclient.org/api/search" -H "token: YOUR_API_TOKEN" -H "Content-Type: application/json" -d "{\"query\":\"singapore cafe\"}"
-```
-<br>
+=== "bash"
 
-#### Windows (PowerShell)
+    ```bash
+    curl -X POST "https://findmyclient.org/api/search" \
+      -H "token: YOUR_API_TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "query": "singapore cafe"
+      }'
+    ```
 
-```powershell
-Invoke-RestMethod -Method POST `
-  -Uri "https://findmyclient.org/api/search" `
-  -Headers @{token="YOUR_API_TOKEN"} `
-  -Body (@{query="singapore cafe"} | ConvertTo-Json)
-```
+=== "python"
+
+    ```python
+    import requests
+
+    response = requests.post(
+        "https://findmyclient.org/api/search",
+        headers={"token": "YOUR_API_TOKEN"},
+        json={"query": "singapore cafe"}
+    )
+
+    response.json()
+    ```
+
+=== "shell"
+
+    ```powershell
+    Invoke-RestMethod -Method POST `
+      -Uri "https://findmyclient.org/api/search" `
+      -Headers @{token="YOUR_API_TOKEN"} `
+      -Body (@{query="singapore cafe"} | ConvertTo-Json)
+    ```
+
 <br>
 
 ### :material-database: Get Results
 ---
 
-#### macOS / Linux (bash)
+Retrieve the status and results of a previously submitted search job using its `job_id`. 
+Once processing is complete, the API returns structured company and contact data in 
+a machine-readable JSON format.
 
-```bash
-curl -X GET "https://findmyclient.org/api/result/YOUR_JOB_ID"
-```
+=== "bash"
 
-<br>>
+    ```bash
+    curl -X GET "https://findmyclient.org/api/result/YOUR_JOB_ID"
+    ```
 
-#### Windows (CMD)
+=== "python"
 
-```cmd
-curl -X GET "https://findmyclient.org/api/result/YOUR_JOB_ID"
-```
+    ```python
+    import requests
 
-<br>
+    response = requests.get(
+        "https://findmyclient.org/api/result/YOUR_JOB_ID",
+    )
 
-#### Windows (PowerShell)
+    response.json()
+    ```
 
-```powershell
-Invoke-RestMethod -Method GET `
-  -Uri "https://findmyclient.org/api/result/YOUR_JOB_ID"
-```
+=== "shell"
+
+    ```powershell
+    Invoke-RestMethod -Method GET `
+      -Uri "https://findmyclient.org/api/result/YOUR_JOB_ID"
+    ```
+
+<br><br>
+
+!!! tip "Tips"
+
+    Search jobs are processed asynchronously. Save the returned `job_id` and poll the result endpoint until the status becomes `completed`.
+
+
+
+
 
 <br><br><br><br><br><br><br><br><br><br>

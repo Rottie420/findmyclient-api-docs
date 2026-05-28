@@ -9,10 +9,11 @@ nav:
       - Result Endpoint: result-endpoint.md
       - Basic Usage: usage.md
       - Limitations: limitations.md
-  - Release:
+  - Releases:
       - v0.0.2: v0-0-2.md
       - v0.0.1: v0-0-1.md
   - Resources:
+      - FindMyClient.org: about.md
       - Privacy Policy: privacy-policy.md
       - Terms & Conditions: terms-conditions.md
   - Pricing:

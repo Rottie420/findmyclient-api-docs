@@ -42,7 +42,7 @@ Submit a new search request.
 
 ```bash
 curl -X POST "https://findmyclient.org/api/search" \
-  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "token: YOUR_API_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
     "query": "singapore cafe"

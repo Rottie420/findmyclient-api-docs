@@ -203,7 +203,7 @@ A B2B tool for finding public contact data, enriching prospects, and streamlinin
     ```
 
 
--   :material-chart-line:{ .lg .middle } ##__Built for Growth__
+-   :material-chart-line:{ .lg .middle } __Built for Growth__
 
     ---
 
