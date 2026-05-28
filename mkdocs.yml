@@ -10,9 +10,8 @@ nav:
       - Basic Usage: usage.md
       - Limitations: limitations.md
   - Release:
-      - Latest: latest.md
+      - v0.0.2: v0-0-2.md
       - v0.0.1: v0-0-1.md
-      - v0.0.0: v0-0-0.md
   - Resources:
       - Privacy Policy: privacy-policy.md
       - Terms & Conditions: terms-conditions.md
