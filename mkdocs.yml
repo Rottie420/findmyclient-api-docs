@@ -1,15 +1,23 @@
-site_name: Documentation
+site_name: FindMyClient
 
 nav:
-  - Introduction: introduction.md
-  - Getting Started: getting-started.md
-  - Basic Usage: usage.md
-  - Limitations: limitations.md
-  - Changelog: changelog.md
-  - Resources: resources.md
-  - Home: https://findmyclient.org
-
-
+  - Home: index.md
+  - Getting Started: 
+      - Introduction: introduction.md
+      - API Token: api-token.md
+      - Search Endpoint: search-endpoint.md
+      - Result Endpoint: result-endpoint.md
+      - Basic Usage: usage.md
+      - Limitations: limitations.md
+  - Release:
+      - Latest: latest.md
+      - v0.0.1: v0-0-1.md
+      - v0.0.0: v0-0-0.md
+  - Resources:
+      - Privacy Policy: privacy-policy.md
+      - Terms & Conditions: terms-conditions.md
+  - Pricing:
+      - Pricing Table: pricing-table.md
 theme:
   name: material
   custom_dir: docs/overrides
@@ -29,17 +37,38 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - content.code.select
   font:
     text: Inter
     code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github 
+
+repo_url: https://github.com/Rottie420/findmyclient.git
+repo_name: Rottie420/findmyclient
+
+copyright: Copyright &copy; 2026 FindMyClient.org
+
+plugins:
+  - search
 
 markdown_extensions:
   - admonition
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.superfences
+  - pymdownx.snippets
   - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
-    
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
