@@ -1,11 +1,17 @@
 # Limitations
 
-The FindMyClient API has the following limitations to ensure stable and fair usage across all users.
+The FindMyClient API has the following limitations to ensure stable, fair, and reliable usage for all users.
 
+<br>
+
+### :material-speedometer: Rate Limits
 ---
 
-## Rate Limits
-Requests are subject to rate limiting. Excessive usage may result in throttling or temporary request delays. Please ensure your integration respects safe request pacing.
+Requests are subject to rate limiting. Excessive usage may result in throttling or temporary delays.
+
+!!! warning "Rate Limit Behavior"
+    If limits are exceeded, the API will return a throttled response.
+
 ```json
 {
   "error": "Too many requests. Please wait before trying again.",
@@ -13,39 +19,65 @@ Requests are subject to rate limiting. Excessive usage may result in throttling 
 }
 ```
 
+<br>
+
+### :material-timer-sand: Asynchronous Processing
 ---
 
-## Asynchronous Processing
-All requests are processed asynchronously. After submitting a request, you must poll the result endpoint:
-```json
+All requests are processed asynchronously.
+
+After submitting a request, you must poll the result endpoint to retrieve the final output:
+
+```http
 /result/{job_id}
 ```
-to retrieve the final output once processing is complete.
+<br>
 
+### :material-clock-outline: Processing Time
 ---
 
-## Processing Time
 Processing time may vary depending on:
 
-Query complexity
-Current system load
-Availability of external data sources
+- Query complexity  
+- Current system load  
+- Availability of external data sources  
 
-Some requests may complete quickly, while others may require additional time.
+Some requests may complete quickly, while others may take longer depending on workload and crawling depth.
 
+<br>
+
+### :material-database-off: Data Availability
 ---
 
-## Data Availability
 Results depend on publicly available data. In some cases:
 
-Business contact information may not exist
-Email addresses may not be publicly accessible
-Partial or limited data may be returned
+- Business contact information may not exist  
+- Email addresses may not be publicly accessible  
+- Partial or incomplete results may be returned  
 
+<br>
+
+### :material-lan: Concurrent Requests
 ---
 
-## Concurrent Requests
-Concurrent request volume is limited to ensure system stability. High parallel usage may result in throttling or delayed processing.
+Concurrent request volume is limited to ensure system stability.
 
+High parallel usage may result in:
+
+- Request throttling  
+- Increased latency  
+- Delayed job processing  
+
+<br>
+
+### :material-check-circle-outline: Best Practices
+---
+
+To ensure optimal performance:
+
+- Use controlled request intervals  
+- Avoid unnecessary parallel requests  
+- Cache results when possible  
+- Poll results with reasonable intervals (e.g., 10–60 seconds)
 
 <br><br><br><br><br><br><br><br><br><br>

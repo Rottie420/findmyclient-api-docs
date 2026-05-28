@@ -1,26 +1,29 @@
 # Getting Started
 
-## Base URL
+### :material-web: Base URL
+---
 
-```json
+```text
 https://findmyclient.org/api
 ```
+<br>
 
-## Result Endpoint
+### :material-api: Result Endpoint
+---
 
-### `GET` `/result/<job_id>`
+#### `GET` `/result/<job_id>`
 
 Retrieve the current status and results of a search job.
 
-### Example
+#### Example Request
 
-```json
-/result/654e0e93-1a14-44d3-97e1-d7fabaf782fd
+```http
+GET /result/654e0e93-1a14-44d3-97e1-d7fabaf782fd
 ```
+<br>
 
+### :material-timer-sand: Processing Response
 ---
-
-## Processing Response
 
 Returned while the job is still running.
 
@@ -33,24 +36,25 @@ Returned while the job is still running.
   "user": "user@test.com"
 }
 ```
+<br>
 
-### Response Payload
-
-The following table describes the properties returned in the API response body.
-
-| Field | Type | Description |
-| :--- | :--- | :--- |
-| `created_at` | string (timestamp) | The date and time when the job was created, formatted in UTC. |
-| `error` | string \| null | Details of any execution errors, or `null` if the operation is successful. |
-| `result` | object \| null | The output payload of the completed job, or `null` if still in progress. |
-| `status` | string | The current execution state of the requested job (e.g., `processing`). |
-| `user` | string (email) | The email address associated with the account that initiated the request. |
-
+### :material-table: Response Fields (Processing)
 ---
 
-## Completed Response
+| Field | Type | Description |
+|------|------|-------------|
+| `created_at` | string (timestamp) | When the job was created (UTC) |
+| `error` | string \| null | Execution errors, or `null` if none |
+| `result` | object \| null | Empty until job completes |
+| `status` | string | Current job state (e.g. `processing`) |
+| `user` | string (email) | Account that initiated the request |
 
-Returned once the search has completed successfully.
+<br>
+
+### :material-check-circle: Completed Response
+---
+
+Returned once the job finishes successfully.
 
 ```json
 {
@@ -94,35 +98,71 @@ Returned once the search has completed successfully.
   "status": "completed"
 }
 ```
-### Response Payload
+<br>
 
-The following table describes the properties returned in the API response body for a completed job.
+### :material-table: Response Fields (Completed)
+---
+
+#### Job Metadata
 
 | Field | Type | Description |
-| :--- | :--- | :--- |
-| `created_at` | string (timestamp) | The date and time when the job was initially created, formatted in UTC. |
-| `credit_cost` | integer | The total number of API credits consumed by this operation. |
-| `error` | string \| null | Global execution errors encountered at the job level, or `null` if the job completed processing. |
-| `result` | object \| null | The root container for the scraped data payload and execution metrics. |
-| `result.errors` | array (object) | A list of granular, non-fatal errors encountered during individual site crawls. |
-| `result.errors[].code` | string | The specific error code identifier (e.g., `crawl_failed`). |
-| `result.errors[].count` | integer | The total number of instances this specific error occurred during execution. |
-| `result.errors[].retryable` | boolean | Indicates whether the failed operations can be retried. |
-| `result.input` | object | The configuration and criteria parameters submitted with the original request. |
-| `result.input.query` | string | The target search term or keywords used for the scraping job. |
-| `result.meta` | object | Metadata related to the system execution and performance environment. |
-| `result.meta.agent` | string | The identifier name and version of the scraper bot that executed the job. |
-| `result.meta.execution_time_seconds` | float | The total time taken to process the job, measured in seconds. |
-| `result.meta.timestamp` | string (timestamp) | The exact date and time when the processing was finalized. |
-| `result.output` | object | The primary data payload extracted by the scraper. |
-| `result.output.emails` | array (string) | A list of distinct, deduplicated email addresses uncovered during the search. |
-| `result.output.total_emails_found` | integer | The total count of unique email addresses successfully extracted. |
-| `result.output.total_failed_websites` | integer | The number of target websites that could not be successfully crawled. |
-| `result.output.total_websites_scanned` | integer | The total number of unique web domains analyzed during the operation. |
-| `result.status` | object | Internal health metrics for the specific dataset generation. |
-| `result.status.partial_failure` | boolean | Flags whether some parts of the job failed (e.g., individual website timeouts) despite overall completion. |
-| `result.status.success` | boolean | Indicates whether the core scraping engine successfully finished the processing run. |
-| `status` | string | The top-level processing state of the request (e.g., `completed`). |
+|------|------|-------------|
+| `created_at` | string (timestamp) | Job creation time (UTC) |
+| `credit_cost` | integer | API credits used |
+| `error` | string \| null | Global job error (if any) |
+| `status` | string | Job state (e.g. `completed`) |
+
+
+#### Result Object
+
+| Field | Type | Description |
+|------|------|-------------|
+| `result` | object | Root container for extracted data |
+
+
+#### Errors
+
+| Field | Type | Description |
+|------|------|-------------|
+| `result.errors` | array | Non-fatal crawl errors |
+| `result.errors[].code` | string | Error identifier (e.g. `crawl_failed`) |
+| `result.errors[].count` | integer | Occurrence count |
+| `result.errors[].retryable` | boolean | Whether retry is possible |
+
+
+#### Input
+
+| Field | Type | Description |
+|------|------|-------------|
+| `result.input.query` | string | Original search query |
+
+
+#### Metadata
+
+| Field | Type | Description |
+|------|------|-------------|
+| `result.meta.agent` | string | Scraper version used |
+| `result.meta.execution_time_seconds` | float | Processing time |
+| `result.meta.timestamp` | string | Completion timestamp |
+
+
+#### Output Data
+
+| Field | Type | Description |
+|------|------|-------------|
+| `result.output.emails` | array | Extracted email list |
+| `result.output.total_emails_found` | integer | Unique emails found |
+| `result.output.total_failed_websites` | integer | Failed website crawls |
+| `result.output.total_websites_scanned` | integer | Total scanned domains |
+
+
+#### Status Flags
+
+| Field | Type | Description |
+|------|------|-------------|
+| `result.status.partial_failure` | boolean | Some sources failed but job completed |
+| `result.status.success` | boolean | Overall success state |
+
 
 
 <br><br><br><br><br><br><br><br><br><br>
