@@ -57,6 +57,17 @@ hide:
     opacity: 0.85;
   }
 
+  .how-it-works {
+  width: 100vw;
+  height: 500px; /* REQUIRED */
+  margin-left: calc(50% - 50vw);
+
+  background-image: url('assets/images/how_it_works.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
   /* 3. Official Documentation Button Layouts */
   .hero-btn-container {
     display: flex;
@@ -148,9 +159,22 @@ The API powering AI agents, workflow automation, CRM enrichment, and lead genera
 <!-- Hero Banner Layout Area -->
 <div style="text-align:center; margin-top:" markdown>
 
+<h2> How It Works </h2>
+
+Send a query, an async job runs crawling and analysis, then poll for a final JSON <br>result with emails and business data.
+
+</div>
+
+<br>
+
+<div class="how-it-works"></div>
+
+<br>
+
+<div style="text-align:center; margin-top:" markdown>
 <h2> Designed For Modern Lead Generation </h2>
 
-A B2B tool for finding public contact data, enriching prospects, and streamlining outbound research workflows.
+A B2B tool for finding public contact data, enriching prospects, and streamlining <br>outbound research workflows.
 
 </div>
 
