@@ -97,8 +97,7 @@ Use the same authorization header from the initial request.
 {
   "status": "completed",
   "result": {
-    "companies": [],
-    "contacts": []
+    "email": []
   }
 }
 ```
