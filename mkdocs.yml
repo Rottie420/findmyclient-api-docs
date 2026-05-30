@@ -9,6 +9,8 @@ nav:
       - Result Endpoint: result-endpoint.md
       - Basic Usage: usage.md
       - Limitations: limitations.md
+  - Integration:
+      - n8n: n8n.md
   - Releases:
       - v0.0.2: v0-0-2.md
       - v0.0.1: v0-0-1.md

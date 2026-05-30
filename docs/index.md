@@ -22,9 +22,9 @@ hide:
   .custom-hero-wrapper {
     background-color: var(--md-primary-color);
     color: var(--md-primary-bg-color);
-    padding: 3.5rem 1.5rem 5.5rem;
+    padding: 2.5rem 1.5rem 5.5rem;
     text-align: center;
-    margin-top: -38px;
+    margin-top: -1.9rem;
   }
 
   .custom-hero-wrapper {
@@ -157,7 +157,7 @@ The API powering AI agents, workflow automation, CRM enrichment, and lead genera
 <div class="grid-content-container" markdown>
 
 <!-- Hero Banner Layout Area -->
-<div style="text-align:center; margin-top:" markdown>
+<div style="text-align:center;" markdown>
 
 <h2> How It Works </h2>
 
@@ -165,11 +165,8 @@ Send a query, an async job runs crawling and analysis, then poll for a final JSO
 
 </div>
 
-<br>
 
 <div class="how-it-works"></div>
-
-<br>
 
 <div style="text-align:center; margin-top:" markdown>
 <h2> Designed For Modern Lead Generation </h2>
@@ -190,7 +187,11 @@ A B2B tool for finding public contact data, enriching prospects, and streamlinin
 
     ```JSON
     {
-      "query": "singapore cafe"
+      "query": "singapore cafe",
+      "status": "completed",
+      "result": {
+        "emails": []
+      }
     }
     ```
 
@@ -202,11 +203,15 @@ A B2B tool for finding public contact data, enriching prospects, and streamlinin
     Integrate directly into internal tools, [`AI workflows`](#), CRMs, and outreach automation systems.
 
     ```JSON
-    {
-      "method": "GET",
-      "url": "https://findmyclient.org/api/search",
-      "webhook": "n8n webhook URL"
-    }
+    "nodes": [
+        {
+          "name": "HTTP Request",
+          "type": "n8n-nodes-base.httpRequest",
+          "parameters": {
+            "method": "GET",
+            "url": "https://findmyclient.org/api/search"
+          }
+        }
     ```
 
     
