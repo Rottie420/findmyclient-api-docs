@@ -1,6 +1,7 @@
 # Integration
 
 ### :material-connection: n8n Integration
+---
 
 Connect [FindMyClient.org](https://findmyclient.org) with n8n using the built-in HTTP Request node.
 
@@ -11,167 +12,392 @@ This integration is lightweight, flexible, and does not require a custom n8n com
 ### :material-sitemap: Workflow Overview
 ---
 
-The integration follows a simple asynchronous workflow.
+![Alternative descriptive text](assets/images/n8n_workflow.png)
 
-```mermaid
-flowchart LR
-    A[Client Request] --> B[POST /search]
-    B --> C[Async Job Created]
-    C --> D[Wait for Processing]
-    D --> E[GET /result/{job_id}]
-    E --> F[Final JSON Results]
-```
+The workflow:
+
+1. Accepts a search query.
+2. Starts a FindMyClient search job.
+3. Retrieves the generated `job_id`.
+4. Polls the API until the search is completed.
+5. Extracts discovered emails.
+6. Splits emails into individual records.
+7. Optionally:
+   - Save results to Google Sheets
+   - Send emails via Gmail
 
 <br>
 
-### :material-play-circle-outline: Creating a Search Request
+!!! tip "Download!!!"
+
+    Download the n8n workflow from this [link](https://storage.cloud.google.com/findmyclient-downloads/n8n_workflow.json) to get the latest version of the automation file.
+
+<br>
+
+### :material-cog: Prerequisites
 ---
 
-Add an **HTTP Request** node to your workflow.
+Before using this workflow:
 
-#### Request Configuration
-
-| Setting | Value |
-|---|---|
-| Method | `POST` |
-| URL | `https://findmyclient.org/api/search` |
-
-#### Headers
-
-| Header | Value |
-|---|---|
-| token | `YOUR_API_TOKEN` |
-| Content-Type | `application/json` |
+- n8n installed
+- FindMyClient API token
+- Optional Google Sheets credentials
+- Optional Gmail credentials
 
 
-#### Request Body
+### :material-numeric-1-circle: Configure Search Query
+---
+
+The **Input Query** node defines the search keyword.
+
+Example:
 
 ```json
 {
-  "query": "restaurants in singapore"
+  "query": "italy winery"
 }
 ```
 
-#### Example Response
+Examples:
 
-After submitting the request, the API returns a processing response containing a `job_id`.
+- singapore cafe
+- london dentist
+- sydney marketing agency
+- italy winery
+
+### :material-numeric-2-circle: Start Search Job
+---
+
+The workflow sends a request to:
+
+```http
+POST https://findmyclient.org/api/search
+```
+
+Headers:
 
 ```json
 {
-  "job_id": "job_abc123",
+  "token": "YOUR-API-TOKEN",
+  "content-type": "application/json"
+}
+```
+
+Body:
+
+```json
+{
+  "query": "italy winery"
+}
+```
+
+Example response:
+
+```json
+{
+  "job_id": "abc123"
+}
+```
+
+### :material-numeric-3-circle: Store Job ID
+---
+
+The `get_job_id` node extracts:
+
+```json
+{
+  "job_id": "abc123"
+}
+```
+
+This ID is used for polling search progress.
+
+
+### :material-numeric-4-circle: Poll Search Status
+---
+
+The workflow requests:
+
+```http
+GET https://findmyclient.org/api/result/{job_id}
+```
+
+Example:
+
+```http
+GET https://findmyclient.org/api/result/abc123
+```
+
+Possible responses:
+
+#### Processing
+
+```json
+{
   "status": "processing"
 }
 ```
 
-<br>
-
-### :material-timer-sand: Waiting for Processing
----
-
-Because searches are processed asynchronously, it is recommended to add a **Wait** node after the initial request.
-
-!!! info "Recommended Delay"
-    A delay between **5–10 seconds** is usually sufficient for standard searches.
-
-This reduces unnecessary polling and helps minimize API load.
-
-<br>
-
-### :material-database-search: Fetching Results
----
-
-Add a second **HTTP Request** node to retrieve the completed result.
-
-| Setting | Value |
-|---|---|
-| Method | `GET` |
-| URL | `https://findmyclient.org/api/result/{{$json.job_id}}` |
-
-Use the same authorization header from the initial request.
-
-<br>
-
-#### Example Result
+#### Completed
 
 ```json
 {
   "status": "completed",
   "result": {
-    "email": []
+    "output": {
+      "emails": [
+        "info@example.com",
+        "sales@example.com"
+      ]
+    }
   }
 }
 ```
 
-<br>
-
-### :material-source-branch: Typical Workflow
+### :material-numeric-5-circle: Wait and Retry
 ---
 
-A common production workflow looks similar to the example below.
+If the status is not:
 
-```mermaid
-flowchart LR
-    A[Webhook Trigger]
-    --> B[HTTP POST /search]
-    --> C[Wait Node]
-    --> D[HTTP GET /result/{job_id}]
-    --> E[CRM / Spreadsheet / AI Agent]
+```json
+completed
 ```
 
-This structure works well for:
+The workflow:
 
-- CRM enrichment  
-- AI prospecting systems  
-- Outbound automation  
-- Internal lead research workflows  
+1. Waits 30 seconds
+2. Reuses the existing `job_id`
+3. Checks the API again
 
-<br>
+This creates a polling loop until the search finishes.
 
-### :material-shield-check-outline: Production Recommendations
+
+### :material-numeric-6-circle: Extract Results
 ---
 
-For larger workflows:
+When completed:
 
-- Store returned `job_id` values for retry handling  
-- Use environment variables for API credentials  
-- Add retry logic for failed requests  
-- Implement rate limiting for high-volume workflows  
-- Cache repeated searches where possible  
+```json
+{
+  "result": {
+    "output": {
+      "emails": [
+        "info@example.com",
+        "sales@example.com",
+        "contact@example.com"
+      ]
+    }
+  }
+}
+```
 
-<br>
+The workflow stores:
 
-### :material-apps: Integration Ideas
+```json
+{
+  "result.output.emails": [...]
+}
+```
+
+### :material-numeric-7-circle: Split Emails
 ---
 
-FindMyClient can integrate with:
+The **Split Emails** node converts:
 
-- HubSpot  
-- Google Sheets  
-- Airtable  
-- Notion  
-- Slack  
-- Discord  
-- Internal CRM systems  
+```json
+[
+  "info@example.com",
+  "sales@example.com",
+  "contact@example.com"
+]
+```
 
-Many teams also combine FindMyClient with AI agents to automate:
+Into:
 
-- Prospect qualification  
-- Company research  
-- Lead enrichment  
-- Outbound workflows  
+```json
+{
+  "email": "info@example.com"
+}
+```
 
-<br>
+```json
+{
+  "email": "sales@example.com"
+}
+```
 
-### :material-rocket-launch-outline: Next Steps
+```json
+{
+  "email": "contact@example.com"
+}
+```
+
+This allows downstream processing of each email individually.
+
+### Optional: Save to Google Sheets
 ---
 
-Once your integration is working, reusable n8n templates can be created for:
+The workflow includes a disabled Google Sheets node.
 
-- CRM enrichment  
-- Automated prospect discovery  
-- AI-powered lead qualification  
-- Internal business workflows  
+Example spreadsheet:
 
-This helps standardize automation pipelines and accelerate deployment across teams.
+| Email |
+|---------|
+| info@example.com |
+| sales@example.com |
+| contact@example.com |
+
+Enable the node and configure your spreadsheet credentials.
+
+### Optional: Send Email Notifications
+---
+
+The workflow includes a disabled Gmail node.
+
+Possible use cases:
+
+- Notify sales teams
+- Send discovered leads
+- Trigger CRM imports
+- Alert automation systems
+
+Enable the Gmail node and configure OAuth credentials.
+
+---
+
+### API Endpoints Used
+
+#### Start Search
+
+```http
+POST /api/search
+```
+
+Request:
+
+```json
+{
+  "query": "italy winery"
+}
+```
+
+Response:
+
+```json
+{
+  "job_id": "abc123"
+}
+```
+
+---
+
+#### Get Results
+
+```http
+GET /api/result/{job_id}
+```
+
+Response:
+
+```json
+{
+  "status": "completed",
+  "result": {
+    "output": {
+      "emails": []
+    }
+  }
+}
+```
+
+---
+
+### Customization Ideas
+
+#### Dynamic Queries
+
+Replace the Set node with:
+
+- Webhook Trigger
+- Form Submission
+- Google Sheets Input
+- Airtable Input
+
+Example:
+
+```json
+{
+  "query": "singapore cafe"
+}
+```
+
+---
+
+### CRM Integration
+
+After `Split Emails`, connect to:
+
+- HubSpot
+- Salesforce
+- Pipedrive
+- Zoho CRM
+
+---
+
+### Lead Enrichment
+
+After collecting emails, enrich contacts using:
+
+- Apollo
+- Clearbit
+- Clay
+- Custom APIs
+
+---
+
+#### Error Handling
+
+Common scenarios:
+
+| Scenario | Action |
+|-----------|----------|
+| Search still processing | Wait and retry |
+| Empty result set | End workflow |
+| Invalid API token | Update credentials |
+| API timeout | Retry request |
+| Network failure | Use n8n retry logic |
+
+---
+
+### Example End-to-End Flow
+
+Input:
+
+```json
+{
+  "query": "italy winery"
+}
+```
+
+Output:
+
+```json
+[
+  "info@winery1.com",
+  "sales@winery2.com",
+  "contact@winery3.com"
+]
+```
+
+The workflow automatically handles:
+
+- Job creation
+- Polling
+- Status checking
+- Email extraction
+- Record splitting
+- Export and notification steps
+
+making it suitable for automated lead generation pipelines.
 
 <br><br><br><br><br><br><br><br><br><br>
