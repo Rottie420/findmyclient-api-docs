@@ -190,7 +190,7 @@ A B2B tool for finding public contact data, enriching prospects, and streamlinin
       "query": "singapore cafe",
       "status": "completed",
       "result": {
-        "emails": []
+        "emails": [sgcoffee@email.com]
       }
     }
     ```
