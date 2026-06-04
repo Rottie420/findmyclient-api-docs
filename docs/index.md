@@ -141,9 +141,9 @@ hide:
 <!-- Hero Banner Layout Area -->
 <div class="custom-hero-wrapper" markdown>
 
-# API For Finding Emails<br>From Web Data
+# Email Discovery API For<br>Your Workflows
 
-The API powering AI agents, workflow automation, CRM enrichment, and lead generation systems.
+Turn any search into business emails and power automated lead generation inside workflow systems.
 
 <div class="hero-btn-container" markdown>
 [Get Started](/introduction/){ .md-button .md-button--primary }
@@ -159,9 +159,8 @@ The API powering AI agents, workflow automation, CRM enrichment, and lead genera
 <!-- Hero Banner Layout Area -->
 <div style="text-align:center;" markdown>
 
-<h2> How It Works </h2>
+<h2> Send a search query and the system runs an async web <br>crawl across multiple sources. </h2>
 
-Send a query, an async job runs crawling and analysis, then poll for a final JSON <br>result with emails and business data.
 
 </div>
 
@@ -169,9 +168,7 @@ Send a query, an async job runs crawling and analysis, then poll for a final JSO
 <div class="how-it-works"></div>
 
 <div style="text-align:center; margin-top:" markdown>
-<h2> Designed For Modern Lead Generation </h2>
-
-A B2B tool for finding public contact data, enriching prospects, and streamlining <br>outbound research workflows.
+<h2> The first email discovery API built natively for workflow <br>automation (n8n, Zapier, Make) </h2>
 
 </div>
 
