@@ -1,3 +1,7 @@
+---
+icon: material/fire
+---
+
 # Integration
 
 ### :material-connection: n8n Integration
@@ -12,7 +16,7 @@ This integration is lightweight, flexible, and does not require a custom n8n com
 ### :material-sitemap: Workflow Overview
 ---
 
-![Alternative descriptive text](assets/images/n8n_workflow.png)
+![n8n Workflow](assets/images/n8n_workflow.png)
 
 The workflow:
 
@@ -30,7 +34,11 @@ The workflow:
 
 !!! tip "Download!!!"
 
-    Download the n8n workflow from this [link](https://storage.cloud.google.com/findmyclient-downloads/n8n_workflow.json) to get the latest version of the automation file.
+    Download the n8n workflow from this [link](https://storage.googleapis.com/findmyclient-downloads/n8n_workflow_v1.2.json) to get the latest version of the automation file.
+
+    Note: if not downloading right click [link](https://storage.googleapis.com/findmyclient-downloads/n8n_workflow_v1.2.json) and `save link as`.
+
+    n8n_workflow_v1.2.json
 
 <br>
 
@@ -48,67 +56,73 @@ Before using this workflow:
 ### :material-numeric-1-circle: Configure Search Query
 ---
 
-The **Input Query** node defines the search keyword.
+Add a **Edit Fields (Set)** node and input the search keyword.
 
-Example:
-
-```json
-{
-  "query": "italy winery"
-}
-```
-
-Examples:
-
-- singapore cafe
-- london dentist
-- sydney marketing agency
-- italy winery
+![STEP 1](assets/images/step_1_search_query.png)
 
 ### :material-numeric-2-circle: Start Search Job
 ---
 
-The workflow sends a request to:
+Add a **HTTP Requests** node and set the parameters.
 
+
+**Method**
 ```http
-POST https://findmyclient.org/api/search
+POST
 ```
 
-Headers:
+`URL`
+```http
+https://findmyclient.org/api/search
+```
 
+**Headers**
+
+`Name`
 ```json
 {
-  "token": "YOUR-API-TOKEN",
-  "content-type": "application/json"
+  "token"
 }
 ```
-
-Body:
-
+`Value`
 ```json
 {
-  "query": "italy winery"
+  "YOUR-API-TOKEN"
 }
 ```
-
-Example response:
-
+`Name`
 ```json
 {
-  "job_id": "abc123"
+  "content-type"
+}
+```
+`Value`
+```json
+{
+  "application/json"
+}
+```
+**Body Parameters**
+
+`Name`
+```json
+{
+  "query"
+}
+```
+`Value`
+```json
+{
+  "{{ $json.query }}"
 }
 ```
 
 ### :material-numeric-3-circle: Store Job ID
 ---
 
-The `get_job_id` node extracts:
+Add a **Edit Fields (Set)** to store `job_id`.
 
-```json
-{
-  "job_id": "abc123"
-}
-```
+![STEP 3](assets/images/step_3_get_job_id.png)
 
 This ID is used for polling search progress.
 
@@ -116,19 +130,19 @@ This ID is used for polling search progress.
 ### :material-numeric-4-circle: Poll Search Status
 ---
 
-The workflow requests:
+Add a **HTTP Requests** node and set the parameters.
 
+**Method**
 ```http
-GET https://findmyclient.org/api/result/{job_id}
+GET
 ```
 
-Example:
-
+`URL`
 ```http
-GET https://findmyclient.org/api/result/abc123
+https://findmyclient.org/api/result/{{$json["job_id"]}}
 ```
 
-Possible responses:
+Returned responses:
 
 #### Processing
 
@@ -156,6 +170,8 @@ Possible responses:
 
 ### :material-numeric-5-circle: Wait and Retry
 ---
+
+use **Wait** node and set the parameters.
 
 If the status is not:
 
