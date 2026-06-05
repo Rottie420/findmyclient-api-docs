@@ -1,0 +1,22 @@
+.md-home[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #000000;
+  --md-primary-fg-color--dark: #000000;
+  --md-primary-fg-color--light: #1a1a1a;
+
+  --md-default-bg-color: #000000;
+  --md-default-bg-color--light: #0a0a0a;
+  --md-code-bg-color: #0d0d0d;
+
+  background-color: #000 !important;
+}
+
+/* DARK MODE SURFACES ONLY */
+.md-home[data-md-color-scheme="slate"] .md-container,
+.md-home[data-md-color-scheme="slate"] .md-main,
+.md-home[data-md-color-scheme="slate"] .md-content,
+.md-home[data-md-color-scheme="slate"] .md-header,
+.md-home[data-md-color-scheme="slate"] .md-tabs,
+.md-home[data-md-color-scheme="slate"] .md-sidebar {
+  background-color: #000 !important;
+  border-color: #111 !important;
+}
