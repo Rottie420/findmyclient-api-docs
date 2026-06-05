@@ -93,7 +93,7 @@ class: md-home
   }
   .n8n-hero h1 {
     font-size: clamp(32px, 5vw, 52px); font-weight: 700; line-height: 1.1;
-    letter-spacing: -0.03em; color: #f0f0f0; margin-bottom: 18px;
+    letter-spacing: -0.03em; color: var(--md-default-fg-color); margin-bottom: 18px;
     max-width: 640px; margin-left: auto; margin-right: auto;
   }
   .n8n-hero h1 span { color: #f04e2c; }
@@ -123,8 +123,6 @@ class: md-home
     font-size: 12px; font-weight: 500; color: #999;
   }
   .int-dot { width: 8px; height: 8px; border-radius: 50%; }
-
-  /* HOW IT WORKS */
   .section {
     padding: 72px 24px;
     max-width: 900px; margin: 0 auto;
@@ -135,9 +133,10 @@ class: md-home
   }
   .section-title {
     font-size: clamp(22px, 3vw, 32px); font-weight: 700;
-    letter-spacing: -0.025em; color: #f0f0f0; margin-bottom: 12px;
+    letter-spacing: -0.025em; color: var(--md-default-fg-color); margin-bottom: 12px;
     line-height: 1.2;
   }
+  
   .section-sub {
     font-size: 15px; color: #777; line-height: 1.6; max-width: 480px;
   }
@@ -332,7 +331,6 @@ class: md-home
       <div class="int-pill"><span class="int-dot" style="background:#FF4A00"></span>Zapier</div>
       <div class="int-pill"><span class="int-dot" style="background:#6D00CC"></span>Make</div>
       <div class="int-pill"><span class="int-dot" style="background:#3b82f6"></span>REST API</div>
-      <div class="int-pill"><span class="int-dot" style="background:#10b981"></span>Webhooks</div>
       <div class="int-pill"><span class="int-dot" style="background:#f59e0b"></span>Self-hosted</div>
     </div>
   </section>
@@ -353,7 +351,7 @@ class: md-home
           <div class="wf-node-icon" style="background:#1e1e1e; color:#f04e2c;">⚡</div>
           <div>
             <div style="font-size:10px;color:#555;margin-bottom:2px;">Trigger</div>
-            Schedule / Webhook
+            Schedule
           </div>
         </div>
         <div class="wf-arrow">→</div>
@@ -369,7 +367,7 @@ class: md-home
           <div class="wf-node-icon" style="background:#1e1e1e; color:#e5c07b;">↻</div>
           <div>
             <div style="font-size:10px;color:#555;margin-bottom:2px;">Async Crawl</div>
-            Poll / Webhook
+            Poll
           </div>
         </div>
         <div class="wf-arrow">→</div>
@@ -377,7 +375,7 @@ class: md-home
           <div class="wf-node-icon" style="background:#162616; color:#98c379;">✓</div>
           <div>
             <div style="font-size:10px;color:#555;margin-bottom:2px;">Result</div>
-            Emails + data
+            Emails
           </div>
         </div>
         <div class="wf-arrow">→</div>
@@ -397,7 +395,7 @@ class: md-home
         <div class="json-line" style="padding-left:16px"><span class="jk">"status":</span> <span class="jv-orange">"completed"</span><span class="jk">,</span></div>
         <div class="json-line" style="padding-left:16px"><span class="jk">"result":</span> <span class="jk">{</span></div>
         <div class="json-line" style="padding-left:32px"><span class="jk">"emails":</span> <span class="jk">[</span><span class="jv-str">"hello@sgcoffee.com"</span><span class="jk">, </span><span class="jv-str">"cafe@beanstory.sg"</span><span class="jk">],</span></div>
-        <div class="json-line" style="padding-left:32px"><span class="jk">"businesses_found":</span> <span class="jv-num">24</span></div>
+        <div class="json-line" style="padding-left:32px"><span class="jk">"total_emails_found":</span> <span class="jv-num">2</span></div>
         <div class="json-line" style="padding-left:16px"><span class="jk">}</span></div>
         <div class="json-line"><span class="jk">}</span></div>
       </div>
@@ -420,8 +418,8 @@ class: md-home
         <h3>Business Discovery</h3>
         <p>Search by keyword, location, and industry using public business data sources and mapping APIs.</p>
         <pre><span class="jk">GET</span> <span class="jv-orange">/api/search</span>
-<span class="jv-key">?query=</span><span class="jv-str">singapore cafe</span>
-<span class="jv-key">&location=</span><span class="jv-str">SG</span></pre>
+<span class="jv-key">?query=</span><span class="jv-str">singapore+cafe</span>
+<span class="jv-key">&token=</span><span class="jv-str">YOUR-API-TOKEN</span></pre>
       </div>
 
       <div class="feat-card">
@@ -438,8 +436,8 @@ class: md-home
         <h3>Developer Friendly</h3>
         <p>Simple REST API with async processing, webhook callbacks, and full self-hosted deployment support.</p>
         <pre><span class="jk">"endpoint":</span> <span class="jv-orange">"/api/search"</span>
-<span class="jk">"async":</span> <span class="jv-num">true</span>
-<span class="jk">"webhook":</span> <span class="jv-str">"your-url"</span></pre>
+<span class="jk">"token":</span> <span class="jv-num">YOUR-API-TOKEN</span>
+<span class="jk">"query": </span> <span class="jv-str">"singapore cafe"</span></pre>
       </div>
 
       <div class="feat-card">
