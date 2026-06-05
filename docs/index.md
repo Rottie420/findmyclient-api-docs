@@ -108,12 +108,12 @@ hide:
   display: inline-block;
   padding: 8px 14px;
   border-radius: 999px;
-  background: white;
+  background: #fff;
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   color: #6d5efc;
   font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 16px;
+  font-size: 12.5px;
+  margin-top: 20px !important;
 }
 .logos { display: inline-flex; gap: 3px; }
 .logo {
@@ -128,7 +128,7 @@ hide:
 .tagline { font-size: 12.5px; font-weight: 600; color: #6d5efc; white-space: nowrap; }
 
 h1 {
-  margin: 0;
+  margin; 0;
   color: #0b1220;
   font-size: 42px;
   font-weight: 800;
@@ -203,8 +203,8 @@ h1 span {
 </span>
 
 <h1>
-The first <span>email discovery API</span><br>
-built natively for<br>
+The first <span>email discovery API</span>
+built natively for
 workflow automation
 </h1>
 
