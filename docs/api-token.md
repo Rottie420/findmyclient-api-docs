@@ -21,7 +21,7 @@ Once signed in, users can generate and manage API tokens directly from the dashb
 <br>
 
 ### :material-shield-key: Authentication
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Include your API token in the request headers when making API calls.
 
@@ -32,7 +32,7 @@ token: YOUR_API_TOKEN
 <br>
 
 ### :material-api: Example Request
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 ```bash
 
@@ -66,12 +66,15 @@ token: YOUR_API_TOKEN
 
 FindMyClient API tokens can be used with:
 
-- AI agents
-- CRM enrichment systems
-- Internal business tools
-- Workflow automation platforms
-- n8n pipelines
-- Custom developer integrations
+| Use Case                         | Primary Users                   | Purpose                                                                        | Example                                                                 |
+| -------------------------------- | ------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| AI Agents                        | AI Developers, SaaS Builders    | Allow AI agents to autonomously discover and qualify prospects.                | An AI sales assistant finds local businesses matching a target profile. |
+| CRM Enrichment                   | Sales Teams, CRM Administrators | Enhance existing CRM records with additional business and contact information. | Enrich company records before launching an outreach campaign.           |
+| Internal Lead Generation Systems | Organizations, Growth Teams     | Power proprietary lead generation platforms with fresh prospect data.          | A company builds its own lead dashboard using FindMyClient APIs.        |
+| Workflow Automation              | Operations Teams, Agencies      | Automate lead discovery and data processing tasks.                             | Automatically send newly discovered leads to a CRM or database.         |
+| n8n Pipelines                    | Automation Builders             | Integrate lead generation into no-code and low-code workflows.                 | Trigger lead searches and route results to Google Sheets or Slack.      |
+| Business Intelligence Tools      | Analysts, Researchers           | Use business data for reporting, market analysis, and decision-making.         | Analyze business density and market opportunities in a region.          |
+| Developer Integrations           | Software Developers             | Embed lead generation and enrichment capabilities into applications.           | Build a custom prospecting platform using the FindMyClient API.         |
 
 
 <br><br><br><br><br><br><br><br><br><br>

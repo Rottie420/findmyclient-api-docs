@@ -22,18 +22,10 @@ Both **GET** and **POST** methods are supported for flexible integration with ap
 
 The API follows a simple asynchronous workflow.
 
-```bash
-flowchart LR
-    A[Submit Search Request] --> B[Receive job_id]
-    B --> C[Poll Result Endpoint]
-    C --> D[Status Completed]
-    D --> E[Retrieve Results]
-```
-
-<br>
+![n8n Workflow](assets/images/how_it_works.png)
 
 ### :material-numeric-1-circle: Submit Request
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 Call the `/search` endpoint to create a new background search job.
 
@@ -44,7 +36,7 @@ POST /search
 <br>
 
 ### :material-numeric-2-circle: Receive Job ID
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 The API immediately returns a unique `job_id`.
 
@@ -58,7 +50,7 @@ The API immediately returns a unique `job_id`.
 <br>
 
 ### :material-numeric-3-circle: Check Status
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Poll the result endpoint periodically to monitor progress.
 
@@ -74,7 +66,7 @@ GET /result/654e0e93-1a14-44d3-97e1-d7fabaf782fd
 <br>
 
 ### :material-numeric-4-circle: Completion
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Once the status becomes `completed`, retrieve the final search results.
 
@@ -93,12 +85,15 @@ Once the status becomes `completed`, retrieve the final search results.
 
 FindMyClient is designed for:
 
-- AI agents
-- CRM enrichment
-- Internal lead generation systems
-- Workflow automation
-- n8n pipelines
-- Business intelligence tools
-- Developer integrations
+| Use Case                         | Primary Users                   | Purpose                                                                        | Example                                                                 |
+| -------------------------------- | ------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
+| AI Agents                        | AI Developers, SaaS Builders    | Allow AI agents to autonomously discover and qualify prospects.                | An AI sales assistant finds local businesses matching a target profile. |
+| CRM Enrichment                   | Sales Teams, CRM Administrators | Enhance existing CRM records with additional business and contact information. | Enrich company records before launching an outreach campaign.           |
+| Internal Lead Generation Systems | Organizations, Growth Teams     | Power proprietary lead generation platforms with fresh prospect data.          | A company builds its own lead dashboard using FindMyClient APIs.        |
+| Workflow Automation              | Operations Teams, Agencies      | Automate lead discovery and data processing tasks.                             | Automatically send newly discovered leads to a CRM or database.         |
+| n8n Pipelines                    | Automation Builders             | Integrate lead generation into no-code and low-code workflows.                 | Trigger lead searches and route results to Google Sheets or Slack.      |
+| Business Intelligence Tools      | Analysts, Researchers           | Use business data for reporting, market analysis, and decision-making.         | Analyze business density and market opportunities in a region.          |
+| Developer Integrations           | Software Developers             | Embed lead generation and enrichment capabilities into applications.           | Build a custom prospecting platform using the FindMyClient API.         |
+
 
 <br><br><br><br><br><br><br><br><br><br>

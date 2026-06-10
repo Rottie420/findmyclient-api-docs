@@ -15,7 +15,7 @@ It covers the full asynchronous workflow:
 <br>
 
 ### :material-language-python: Python Example
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 ```python
 import time
@@ -69,7 +69,7 @@ if __name__ == "__main__":
 <br>
 
 ### :material-play: Start a Search Job
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Start a new search job by sending a query to the API. The request is processed 
 asynchronously and returns a `job_id` that can be used to retrieve results later.
@@ -113,7 +113,7 @@ asynchronously and returns a `job_id` that can be used to retrieve results later
 <br>
 
 ### :material-database: Get Results
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Retrieve the status and results of a previously submitted search job using its `job_id`. 
 Once processing is complete, the API returns structured company and contact data in 

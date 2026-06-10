@@ -1,14 +1,14 @@
 # Getting Started
 
 ### :material-web: Base URL
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 ```json
 https://findmyclient.org/api
 ```
 <br>
 
 ### :material-magnify: Search Endpoint
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 #### `POST` / `GET` `/search`
 
@@ -20,7 +20,7 @@ Submit a new search request.
 <br>
 
 ### :material-code-json: POST Request
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 #### Endpoint
 
@@ -51,7 +51,7 @@ curl -X POST "https://findmyclient.org/api/search" \
 <br>
 
 ### :material-link-variant: GET Request
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 ```http
 GET /search?query=singapore+cafe&token=YOUR-API-TOKEN
@@ -65,7 +65,7 @@ curl "https://findmyclient.org/api/search?query=singapore+cafe&token=YOUR-API-TO
 <br>
 
 ### :material-database-search: Search Response
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 ```json
 {
@@ -77,7 +77,7 @@ curl "https://findmyclient.org/api/search?query=singapore+cafe&token=YOUR-API-TO
 <br>
 
 ### :material-table: Response Fields
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 The following table describes the properties returned in the API response body.
 
@@ -92,7 +92,7 @@ The following table describes the properties returned in the API response body.
 <br>
 
 ### :material-clock-outline: Async Processing
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Search requests are processed asynchronously.
 

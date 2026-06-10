@@ -1,7 +1,7 @@
 # Getting Started
 
 ### :material-web: Base URL
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 ```text
 https://findmyclient.org/api
@@ -9,7 +9,7 @@ https://findmyclient.org/api
 <br>
 
 ### :material-api: Result Endpoint
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 #### `GET` `/result/<job_id>`
 
@@ -23,7 +23,7 @@ GET /result/654e0e93-1a14-44d3-97e1-d7fabaf782fd
 <br>
 
 ### :material-timer-sand: Processing Response
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Returned while the job is still running.
 
@@ -39,7 +39,7 @@ Returned while the job is still running.
 <br>
 
 ### :material-table: Response Fields (Processing)
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 | Field | Type | Description |
 |------|------|-------------|
@@ -52,7 +52,7 @@ Returned while the job is still running.
 <br>
 
 ### :material-check-circle: Completed Response
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Returned once the job finishes successfully.
 
@@ -101,7 +101,7 @@ Returned once the job finishes successfully.
 <br>
 
 ### :material-table: Response Fields (Completed)
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 #### Job Metadata
 

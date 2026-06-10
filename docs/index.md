@@ -298,10 +298,9 @@ class: md-home
   }
   .cta-strip p { font-size: 14px; color: #666; margin-bottom: 24px; }
 
-  /* DIVIDER */
   .divider-line {
-    border: none; border-top: 1px solid #1a1a1a;
-    margin: 0 24px;
+    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem !important;
   }
 </style>
 
@@ -468,7 +467,7 @@ class: md-home
       <p>No scraping needed. No manual lookup. Just a query and a workflow.</p>
       <div style="display:flex; gap:10px; justify-content:center;">
         <button class="btn-lg primary" onclick="window.location.href='/introduction'">Get started →</button>
-      <button class="btn-lg outline" onclick="window.location.href='https://findmyclient.org/login'">Sign in</button>
+      <button class="btn-lg outline" onclick="window.location.href='mailto:human@findmyclient.org'">Contact Us</button>
       </div>
     </div>
   </div>

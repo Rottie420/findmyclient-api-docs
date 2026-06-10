@@ -2,69 +2,34 @@
 
 Simple pricing built for developers, businesses, and automation workflows.
 
----
+<br>
 
-<div class="grid cards" markdown>
-
--   ### Free
-
-    ---
-    
-    #### $0 / month
-
-    Best for testing, prototypes, and small projects.
-
-    **Includes:**
-
-    - Limited API requests  
-    - Limited daily searches  
-    - Basic business discovery  
-    - Self-hosted deployment  
-    - Community support  
-
-
--   ### Pro Plan
-
-    ---
-    
-    #### $29 / month
-
-    Designed for AI agents and automation pipelines that need structured access to public business data.
-
-    **Includes:**
-
-    - **5000** credits / month  
-    - **10** requests / 3 min rate limit  
-    - **1** API key included  
-    - Real-time usage tracking  
-    - Priority API throughput  
+| Feature                  | Free                                    | Pro                                | Enterprise                                      |
+| ------------------------ | --------------------------------------- | ---------------------------------- | ----------------------------------------------- |
+| Monthly Price            | $0                                      | $29                                | Custom                                          |
+| Best For                 | Testing, prototypes, and small projects | AI agents and automation pipelines | Large-scale deployments and custom integrations |
+| Credits / Month          | Limited                                 | 5,000                              | Custom                                          |
+| API Requests             | Limited                                 | Included                           | Custom                                          |
+| Rate Limit               | Standard                                | 10 requests / 3 min                | Flexible                                        |
+| API Keys                 | 1                                       | 1                                  | Custom                                          |
+| Business Discovery       | Basic                                   | Full Access                        | Full Access + Custom Sources                    |
+| Real-Time Usage Tracking | ❌                                       | ✅                                  | ✅                                               |
+| Priority API Throughput  | ❌                                       | ✅                                  | ✅                                               |
+| Self-Hosted Deployment   | ✅                                       | ✅                                  | ✅                                               |
+| Custom Data Sources      | ❌                                       | ❌                                  | ✅                                               |
+| Custom Integrations      | ❌                                       | ❌                                  | ✅                                               |
+| Dedicated Support        | ❌                                       | ❌                                  | ✅                                               |
+| Community Support        | ✅                                       | ✅                                  | ✅                                               |
+| Infrastructure Options   | Standard                                | Standard                           | Scalable & Customized                           |
 
 
--   ### Enterprise
+<br>
 
-    ---
-    
-    #### Custom
+!!! info "Note"
 
-    Tailored solution built around your specific data, scale, and integration needs.
-
-    **Includes:**
-
-    - Custom data sources  
-    - Flexible API limits  
-    - Custom integrations  
-    - Dedicated support  
-    - Scalable infrastructure options  
-
-</div>
-
----
-
-### :material-information-outline: Notes
-
-- Pricing may change in the future
-- Custom plans are tailored to usage requirements
-- All plans include access to the FindMyClient dashboard
-- API usage limits depend on subscription tier
+    - Pricing may change in the future
+    - Custom plans are tailored to usage requirements
+    - All plans include access to the FindMyClient dashboard
+    - API usage limits depend on subscription tier
 
 <br><br><br><br><br><br><br><br><br><br>

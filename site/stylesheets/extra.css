@@ -20,3 +20,25 @@
   background-color: #000 !important;
   border-color: #111 !important;
 }
+
+/* Container adjustment to alignment badges cleanly */
+.md-typeset p:has(> .mdx-badge) {
+    display: inline-flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: -10px;
+    margin-bottom: 16px;
+}
+
+/* Base pill shape layout */
+.mdx-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--md-default-fg-color--05);
+    border: 1px solid var(--md-default-fg-color--10);
+    border-radius: 12px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: normal;
+    overflow: hidden;
+}
