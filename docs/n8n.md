@@ -14,7 +14,7 @@ This integration is lightweight, flexible, and does not require a custom n8n com
 <br>
 
 ### :material-sitemap: Workflow Overview
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 ![n8n Workflow](assets/images/n8n_workflow.png)
 
@@ -43,7 +43,7 @@ The workflow:
 <br>
 
 ### :material-cog: Prerequisites
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Before using this workflow:
 
@@ -54,14 +54,14 @@ Before using this workflow:
 
 
 ### :material-numeric-1-circle: Configure Search Query
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Add a **Edit Fields (Set)** node and input the search keyword.
 
 ![STEP 1](assets/images/step_1_search_query.png)
 
 ### :material-numeric-2-circle: Start Search Job
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Add a **HTTP Requests** node and set the parameters.
 
@@ -118,7 +118,7 @@ https://findmyclient.org/api/search
 ```
 
 ### :material-numeric-3-circle: Store Job ID
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Add a **Edit Fields (Set)** to store `job_id`.
 
@@ -128,7 +128,7 @@ This ID is used for polling search progress.
 
 
 ### :material-numeric-4-circle: Poll Search Status
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 Add a **HTTP Requests** node and set the parameters.
 
@@ -169,7 +169,7 @@ Returned responses:
 ```
 
 ### :material-numeric-5-circle: Wait and Retry
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 use **Wait** node and set the parameters.
 
@@ -189,7 +189,7 @@ This creates a polling loop until the search finishes.
 
 
 ### :material-numeric-6-circle: Extract Results
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 When completed:
 
@@ -216,7 +216,7 @@ The workflow stores:
 ```
 
 ### :material-numeric-7-circle: Split Emails
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 The **Split Emails** node converts:
 
@@ -279,9 +279,9 @@ Possible use cases:
 
 Enable the Gmail node and configure OAuth credentials.
 
----
 
 ### API Endpoints Used
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 #### Start Search
 
@@ -305,7 +305,7 @@ Response:
 }
 ```
 
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 #### Get Results
 
@@ -326,7 +326,7 @@ Response:
 }
 ```
 
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 ### Customization Ideas
 
@@ -383,7 +383,7 @@ Common scenarios:
 | API timeout | Retry request |
 | Network failure | Use n8n retry logic |
 
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.6</span>"
 
 ### Example End-to-End Flow
 

@@ -5,7 +5,7 @@ The FindMyClient API has the following limitations to ensure stable, fair, and r
 <br>
 
 ### :material-speedometer: Rate Limits
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 Requests are subject to rate limiting. Excessive usage may result in throttling or temporary delays.
 
@@ -22,7 +22,7 @@ Requests are subject to rate limiting. Excessive usage may result in throttling 
 <br>
 
 ### :material-timer-sand: Asynchronous Processing
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 All requests are processed asynchronously.
 
@@ -34,7 +34,7 @@ After submitting a request, you must poll the result endpoint to retrieve the fi
 <br>
 
 ### :material-clock-outline: Processing Time
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 Processing time may vary depending on:
 
@@ -47,7 +47,7 @@ Some requests may complete quickly, while others may take longer depending on wo
 <br>
 
 ### :material-database-off: Data Availability
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 Results depend on publicly available data. In some cases:
 
@@ -58,7 +58,7 @@ Results depend on publicly available data. In some cases:
 <br>
 
 ### :material-lan: Concurrent Requests
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 Concurrent request volume is limited to ensure system stability.
 
@@ -71,7 +71,7 @@ High parallel usage may result in:
 <br>
 
 ### :material-check-circle-outline: Best Practices
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 To ensure optimal performance:
 

@@ -18,7 +18,7 @@ Both **GET** and **POST** methods are supported for flexible integration with ap
 <br>
 
 ### :material-source-branch: Workflow Overview
----
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.1</span>"
 
 The API follows a simple asynchronous workflow.
 
