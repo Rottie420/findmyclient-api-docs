@@ -1417,7 +1417,75 @@
   grid-template-columns: 1fr;
   gap: 12px;
 }
+  /* TABLE WRAP */
+  .table-wrap {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+  }
 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  thead {
+    background: #0f0f0f;
+  }
+
+  th {
+    text-align: left;
+    padding: 12px 14px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #666;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #1a1a1a;
+    color: #bbb;
+  }
+
+  tr:nth-child(even) {
+    background: #0f0f0f;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    color: #ccc;
+  }
+
+  .email {
+    color: #61afef;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 500;
+  }
+
+  .role {
+    background: #162236;
+    color: #61afef;
+  }
+
+  .risk {
+    background: #2a1d12;
+    color: #e5c07b;
+  }
+
+  .ok {
+    color: #98c379;
+  }
 /* tablets and up */
 @media (min-width: 640px) {
   .feat-grid {
@@ -1567,6 +1635,9 @@
 
   <hr class="divider-line">
 
+
+
+
   <!-- HOW IT WORKS -->
   <div class="section">
     <div class="section-header">
@@ -1629,6 +1700,73 @@
         <div class="json-line" style="padding-left:16px"><span class="jk">}</span></div>
         <div class="json-line"><span class="jk">}</span></div>
       </div>
+    </div>
+
+    <br><br>
+
+    <!-- TABLE -->
+    <div style="text-align:center;font-weight:600;padding:14px;background:var(--md-code-bg-color);border:1px solid var(--md-default-fg-color--lightest);border-bottom:none;border-radius:12px 12px 0 0;color:var(--md-default-fg-color);">Enriched Leads Table</div>
+
+    <div class="table-wrap" style="border-top: none; border-radius: 0 0 12px 12px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Domain</th>
+            <th>Email</th>
+            <th>Type</th>
+            <th>Risk</th>
+            <th>Score</th>
+            <th>MX</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="mono">alsidras.com</td>
+            <td class="email mono">info@alsidras.com</td>
+            <td><span class="badge role">role</span></td>
+            <td><span class="badge risk">role_account</span></td>
+            <td>1</td>
+            <td class="ok">✓</td>
+          </tr>
+
+          <tr>
+            <td class="mono">alsidratechnicalservices.net</td>
+            <td class="email mono">info@alsidratechnicalservices.net</td>
+            <td><span class="badge role">role</span></td>
+            <td><span class="badge risk">role_account</span></td>
+            <td>1</td>
+            <td class="ok">✓</td>
+          </tr>
+
+          <tr>
+            <td class="mono">moltents.com</td>
+            <td class="email mono">info@moltents.com</td>
+            <td><span class="badge role">role</span></td>
+            <td><span class="badge risk">role_account</span></td>
+            <td>1</td>
+            <td class="ok">✓</td>
+          </tr>
+
+          <tr>
+            <td class="mono">sethnco.com</td>
+            <td class="email mono">info@sethnco.com</td>
+            <td><span class="badge role">role</span></td>
+            <td><span class="badge risk">role_account</span></td>
+            <td>1</td>
+            <td class="ok">✓</td>
+          </tr>
+
+          <tr>
+            <td class="mono">mcmaster.ae</td>
+            <td class="email mono">projects@mcmaster.ae</td>
+            <td><span class="badge role">role</span></td>
+            <td><span class="badge risk">role_account</span></td>
+            <td>1</td>
+            <td class="ok">✓</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
