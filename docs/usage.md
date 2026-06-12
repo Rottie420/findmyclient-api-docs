@@ -144,6 +144,43 @@ a machine-readable JSON format.
       -Uri "https://findmyclient.org/api/result/YOUR_JOB_ID"
     ```
 
+<br>
+
+### :material-table: Get Leads
+
+=== "<span style='color: #6d82f6;'>:octicons-tag-24: 0.0.7</span>"
+
+Retrieve enriched lead results for a completed scraping job using its `job_id`.  
+This endpoint returns structured lead data including business details, verified emails, 
+confidence scores, and metadata from the enrichment pipeline.
+
+=== "bash"
+
+    ```bash
+    curl -X GET "https://findmyclient.org/api/result/leads/654e0e93-1a14-44d3-97e1-d7fabaf782fd"
+    ```
+
+=== "python"
+
+    ```python
+    import requests
+
+    job_id = "654e0e93-1a14-44d3-97e1-d7fabaf782fd"
+
+    response = requests.get(
+        f"https://findmyclient.org/api/result/leads/{job_id}",
+    )
+
+    print(response.json())
+    ```
+
+=== "shell"
+
+    ```powershell
+    Invoke-RestMethod -Method GET `
+      -Uri "https://findmyclient.org/api/result/leads/654e0e93-1a14-44d3-97e1-d7fabaf782fd"
+    ```
+
 <br><br>
 
 !!! tip "Tips"
