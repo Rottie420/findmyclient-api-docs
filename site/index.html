@@ -1429,6 +1429,59 @@
   }
   .section-header { margin-bottom: 40px; }
 
+  /* STATS */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+  @media (min-width: 768px) {
+    .stats-row {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  .stat-item {
+    position: relative;
+    text-align: center;
+    padding: 0 16px;
+  }
+  .stat-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 36px;
+    background: #2a2a2a;
+  }
+  .stat-item:nth-child(odd)::before {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .stat-item:nth-child(odd)::before {
+      display: block;
+    }
+    .stat-item:first-child::before {
+      display: none;
+    }
+  }
+  .stat-item strong {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: #f04e2c;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+  .stat-item p {
+    font-size: 13px;
+    color: #888;
+    font-weight: 500;
+  }
   /* WORKFLOW DIAGRAM */
   .workflow-wrap {
     background: #111; border: 1px solid #1e1e1e;
@@ -1691,7 +1744,25 @@
 
   <hr class="divider-line">
 
-
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-item">
+      <strong>800K+</strong>
+      <p>API Calls Processed</p>
+    </div>
+    <div class="stat-item">
+      <strong>250+</strong>
+      <p>Countries Covered by Search</p>
+    </div>
+    <div class="stat-item">
+      <strong>500+</strong>
+      <p>Emails Found Daily</p>
+    </div>
+    <div class="stat-item">
+      <strong>97%</strong>
+      <p>API Uptime</p>
+    </div>
+  </div>
 
 
   <!-- HOW IT WORKS -->
