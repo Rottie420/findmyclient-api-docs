@@ -32,13 +32,15 @@ The workflow:
 
 <br>
 
-!!! tip "Download!!!"
+!!! tip "Download n8n Workflow"
 
-    Download the n8n workflow from this [link](https://storage.googleapis.com/findmyclient-downloads/n8n_workflow_v1.2.json) to get the latest version of the automation file.
+    Get the latest automation workflow below.
 
-    Note: if not downloading right click [link](https://storage.googleapis.com/findmyclient-downloads/n8n_workflow_v1.2.json) and `save link as`.
+    <a href="https://storage.googleapis.com/findmyclient-downloads/n8n_workflow_v1.2.json" class="md-button md-button--primary" download>
+        ⬇ Download n8n_workflow_v1.2.json
+    </a>
 
-    n8n_workflow_v1.2.json
+    If the download doesn’t start, right-click the button and select **“Save link as…”**.
 
 <br>
 
