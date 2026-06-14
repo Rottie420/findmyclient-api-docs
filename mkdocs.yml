@@ -1,4 +1,5 @@
 site_name: FindMyClient
+site_url: https://docs.findmyclient.org/
 
 nav:
   - Home: index.md
