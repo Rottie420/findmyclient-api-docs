@@ -32,15 +32,15 @@ The workflow:
 
 <br>
 
-!!! tip "Download n8n Workflow"
+!!! tip "Try n8n Workflow"
 
     Get the latest automation workflow below.
 
-    <a href="https://storage.googleapis.com/findmyclient-downloads/n8n_workflow_v1.2.json" class="md-button md-button--primary" download>
-        ⬇ Download n8n_workflow_v1.2.json
+    <a href="https://n8n.io/workflows/16169-find-client-email-leads-from-search-queries-with-findmyclient/" class="md-button md-button--primary" download>
+        ⬇ Try n8n Workflow now
     </a>
 
-    If the download doesn’t start, right-click the button and select **“Save link as…”**.
+    View and import the workflow directly from the official n8n template page.
 
 <br>
 
