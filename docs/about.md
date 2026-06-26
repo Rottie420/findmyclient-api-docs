@@ -1,24 +1,28 @@
 # About FindMyClient.org
 
-A focused micro-SaaS tool to help solo founders, freelancers, and small teams find and convert clients faster — without the bloat of enterprise platforms.
+FindMyClient.org is a lightweight API and community platform built for solo founders, freelancers, and small teams who want to find and reach clients `without` the overhead of enterprise tools or the cost of a full CRM.
 
 ---
 
 ### :material-briefcase-search-outline: What We Do
 
-FindMyClient.org is a lightweight, single-purpose tool that helps individuals and small businesses discover and manage potential clients efficiently. No bloated CRM, no enterprise sales calls — just a tool that does one thing well.
+FindMyClient.org is a lightweight, single-purpose `tool` that helps individuals and small businesses discover and manage potential clients efficiently. No bloated CRM, no enterprise sales calls just a `tool` that does one thing well.
 
 ---
 
 ### :material-target: Our Mission
 
-As a micro-SaaS, we believe client acquisition tools shouldn't be complex, expensive, or time-consuming. Our mission is to stay small, focused, and useful — solving one problem, finding clients, really well, instead of trying to be an all-in-one platform.
+> Client acquisition tools shouldn't be complex, expensive, or time-consuming. We solve one problem `finding clients` really well.
+
+As a micro-SaaS, our goal is to stay small, focused, and useful. One problem, solved properly, rather than trying to be an all-in-one platform.
 
 ---
 
 ### :material-lightbulb-outline: Why We Exist
 
-Most platforms are bloated, over-engineered, and priced for teams much bigger than yours. FindMyClient.org is a micro-SaaS built to be fast, lightweight, practical, and results-focused, maintained by a small, independent team that actually uses what it builds.
+Most platforms are over-engineered and priced for teams much bigger than yours. FindMyClient.org is a micro-SaaS built to stay fast, focused, and practical — maintained by a small independent team that actually uses what it builds.
+
+As an API-first tool, it's designed to plug into your existing workflow rather than replace it. Automate prospecting, enrich leads, generate personalized outreach, and share what works with a community of builders doing the same.
 
 ---
 
