@@ -58,8 +58,8 @@ theme:
   icon:
     repo: fontawesome/brands/github 
 
-repo_url: https://github.com/Rottie420/findmyclient.git
-repo_name: Rottie420/findmyclient
+repo_url: https://github.com/Rottie420/findmyclient-workflows.git
+repo_name: findmyclient-workflows
 
 copyright: Copyright &copy; 2026 FindMyClient.org
 

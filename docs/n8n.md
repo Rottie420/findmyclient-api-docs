@@ -32,15 +32,16 @@ The workflow:
 
 <br>
 
-!!! tip "Try n8n Workflow"
+!!! tip "Community Workflows"
 
-    Get the latest automation workflow below.
+    Browse the community-maintained collection of FindMyClient workflows, templates, and examples.
 
-    <a href="https://n8n.io/workflows/16169-find-client-email-leads-from-search-queries-with-findmyclient/" class="md-button md-button--primary" download>
-        ⬇ Try n8n Workflow now
+    <a href="https://github.com/Rottie420/findmyclient-workflows" class="md-button md-button--primary">
+        📂 Explore Community Workflows
     </a>
 
-    View and import the workflow directly from the official n8n template page.
+    Discover, download, contribute, or share your own automation workflows with the community.
+
 
 <br>
 

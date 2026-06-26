@@ -417,7 +417,7 @@ class: md-home
         <div class="int-pill"><span class="int-dot" style="background:#FF4A00"></span>Zapier</div>
         <div class="int-pill"><span class="int-dot" style="background:#6D00CC"></span>Make</div>
         <div class="int-pill"><span class="int-dot" style="background:#3b82f6"></span>REST API</div>
-        <div class="int-pill"><span class="int-dot" style="background:#f59e0b"></span>Self-hosted</div>
+        <div class="int-pill"><span class="int-dot" style="background:#f59e0b"></span>Community</div>
     </div>
 </section>
 <hr class="divider-line">
